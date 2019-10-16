@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/recommendation-network/static/css/main.34de6062.chunk.css",
-    "main.js": "/recommendation-network/static/js/main.d70f1603.chunk.js",
-    "main.js.map": "/recommendation-network/static/js/main.d70f1603.chunk.js.map",
+    "main.js": "/recommendation-network/static/js/main.5545ec47.chunk.js",
+    "main.js.map": "/recommendation-network/static/js/main.5545ec47.chunk.js.map",
     "runtime~main.js": "/recommendation-network/static/js/runtime~main.c6573c89.js",
     "runtime~main.js.map": "/recommendation-network/static/js/runtime~main.c6573c89.js.map",
     "static/css/2.266e55a5.chunk.css": "/recommendation-network/static/css/2.266e55a5.chunk.css",
-    "static/js/2.ba4ea9fa.chunk.js": "/recommendation-network/static/js/2.ba4ea9fa.chunk.js",
-    "static/js/2.ba4ea9fa.chunk.js.map": "/recommendation-network/static/js/2.ba4ea9fa.chunk.js.map",
+    "static/js/2.1890ab12.chunk.js": "/recommendation-network/static/js/2.1890ab12.chunk.js",
+    "static/js/2.1890ab12.chunk.js.map": "/recommendation-network/static/js/2.1890ab12.chunk.js.map",
     "index.html": "/recommendation-network/index.html",
-    "precache-manifest.9fcc86630db66d1ca230b241a7461e60.js": "/recommendation-network/precache-manifest.9fcc86630db66d1ca230b241a7461e60.js",
+    "precache-manifest.1fbe17d19005d0a4a801e0148f013df5.js": "/recommendation-network/precache-manifest.1fbe17d19005d0a4a801e0148f013df5.js",
     "service-worker.js": "/recommendation-network/service-worker.js",
     "static/css/2.266e55a5.chunk.css.map": "/recommendation-network/static/css/2.266e55a5.chunk.css.map",
     "static/css/main.34de6062.chunk.css.map": "/recommendation-network/static/css/main.34de6062.chunk.css.map"
