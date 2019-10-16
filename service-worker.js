@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/KatherineMak/recommendation-network.git/precache-manifest.5f6986e54ca3ed3395a9294f92acbada.js"
+  "/KatherineMak/recommendation-network.git/precache-manifest.40f6b34cbe799419da474921ad8da1b0.js"
 );
 
 self.addEventListener('message', (event) => {
