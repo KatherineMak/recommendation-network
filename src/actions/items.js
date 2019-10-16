@@ -70,9 +70,12 @@ export function userLoggedIn(status, message, token) {
     };
 }
 
-export function userLogout() {
+export function userLogout(status, message, token) {
     return {
-        type: 'USER_LOGOUT'
+        type: 'USER_LOG',
+        status,
+        message,
+        token
     };
 }
 

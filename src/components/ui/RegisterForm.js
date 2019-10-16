@@ -69,20 +69,6 @@ class RegisterForm extends Component {
                                 </Col>
                             </Form.Group>
 
-                            {/*<Form.Group as={Row} controlId="confirmPassword">*/}
-                                {/*<Form.Label column sm={3}>*/}
-                                    {/*Confirm password*/}
-                                {/*</Form.Label>*/}
-                                {/*<Col sm={9}>*/}
-                                    {/*<Form.Control*/}
-                                        {/*required*/}
-                                        {/*name="confirmPassword"*/}
-                                        {/*type="password"*/}
-                                        {/*placeholder="Password"*/}
-                                    {/*/>*/}
-                                {/*</Col>*/}
-                            {/*</Form.Group>*/}
-
                             <Button variant="primary" type="submit" style={{marginRight: "5px", float: "right"}}>
                                 Submit
                             </Button>

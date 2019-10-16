@@ -1,4 +1,5 @@
 import React, { Component }  from 'react';
+import PropTypes from 'prop-types';
 import {Card, Form, Button, Alert} from "react-bootstrap";
 
 class AddComment extends Component {
@@ -8,32 +9,23 @@ class AddComment extends Component {
             Submit
         </Button>;
         const submit = e => {
-            if (!this.props.userStatus.status) {
-                e.preventDefault();
-            } else {
-                fetch('http://smktesting.herokuapp.com/api/reviews/'+this.props.activeKey, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Token '+this.props.userStatus.token,
-                    },
-                    body: JSON.stringify({
-                        text: e.target.elements.addComment.value,
-                        rate: e.target.elements.rateProduct.value,
-                    })
+            fetch('http://smktesting.herokuapp.com/api/reviews/'+this.props.activeKey, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Token '+this.props.userStatus.token,
+                },
+                body: JSON.stringify({
+                    text: e.target.elements.addComment.value,
+                    rate: e.target.elements.rateProduct.value,
                 })
-                    .then(response => response.json())
-                    .then((jsonData) => {
-                        console.log(jsonData.success);
-                        this.props.history.push(`/`);
-                         if (jsonData.success) {
-                             console.log(this.props.userStatus.message);
-                         } else {
-                             this.props.addUserStatus(jsonData.success, jsonData.message, "");
-                            console.log(this.props.userStatus.message);
-                        }
-                    });
-            }
+            })
+            .then(response => response.json())
+            .then((jsonData) => {
+                 if (!jsonData.success) {
+                     console.log("Error");
+                 }
+            });
         };
         if (!this.props.userStatus.status) {
             alert =
@@ -72,4 +64,9 @@ class AddComment extends Component {
         );
     }
 }
+
+AddComment.propTypes = {
+    userStatus: PropTypes.object.isRequired
+};
+
 export default AddComment

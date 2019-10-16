@@ -70,6 +70,7 @@ class ProductList extends Component {
 
 ProductList.propTypes = {
     fetchData: PropTypes.func.isRequired,
+    fetchComments: PropTypes.func.isRequired,
     items: PropTypes.array.isRequired,
     hasErrored: PropTypes.bool.isRequired,
     isLoading: PropTypes.bool.isRequired

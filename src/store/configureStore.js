@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
-import stateData from '../initialState'
 
 const logger = store => next => action => {
     let result
@@ -20,21 +19,12 @@ const saver = store => next => action => {
     return result
 }
 
-const storeFactory = (initialState=stateData) =>
+const storeFactory = () =>
     applyMiddleware(logger, saver, thunk)(createStore)(
         rootReducer,
-        (localStorage['redux-store']) ?
-            JSON.parse(localStorage['redux-store']) :
-            stateData
+        JSON.parse(localStorage['redux-store'])
     )
 
+
+
 export default storeFactory
-
-
-// export default function configureStore(initialState) {
-//     return createStore(
-//         rootReducer,
-//         initialState,
-//         applyMiddleware(thunk)
-//     );
-// }
