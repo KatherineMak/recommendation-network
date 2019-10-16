@@ -10,37 +10,21 @@ class RegisterForm extends Component {
                 method: 'POST',
                 body: data,
             })
-                .then(response => response.json())
-                .then((jsonData) => {
-                    if (jsonData.success) {
-                        this.props.addUserStatus(jsonData.success, "ok", jsonData.token);
-                        console.log(this.props.userStatus.message);
-                        // this.props.history.push(`/`);
-                        // return <p>this.props.userStatus.message</p>;
-                    } else {
-                        this.props.addUserStatus(jsonData.success, jsonData.message, "");
-                        console.log(this.props.userStatus.message);
-                        // return <div>this.props.userStatus.message</div>;
-                    }
-                });
-            // this.props.addComment(e.target.elements.addComment.value, e.target.elements.rateProduct.value, this.props.activeKey)
+            .then(response => response.json())
+            .then((jsonData) => {
+                if (jsonData.success) {
+                    this.props.addUserStatus(jsonData.success, "ok", jsonData.token);
+                    this.props.history.push(`/`);
+                } else {
+                    this.props.addUserStatus(jsonData.success, jsonData.message, "");
+                }
+            });
         };
 
-        // if (this.props.userStatus.status) {
-        //     return <p>this.props.userStatus.message</p>;
-        // }
-        //
         let alert;
-        if (this.props.userStatus.status === false) {
+        if ((this.props.userStatus.status === false) && (this.props.userStatus.message !== "logout")) {
             alert =
                 <Alert key={1} variant="danger">
-                    {this.props.userStatus.message}
-                </Alert>;
-        }
-
-        if (this.props.userStatus.status === true)  {
-            alert =
-                <Alert key={1} variant="success">
                     {this.props.userStatus.message}
                 </Alert>;
         }
@@ -48,6 +32,9 @@ class RegisterForm extends Component {
         return (
             <div>
                 <Container>
+                    <Row style={{margin: "10px 30px"}} className="justify-content-md-center">
+                        <p>Registration form</p>
+                    </Row>
                     <Row style={{margin: "10px 30px"}} className="justify-content-md-center">
                         {alert}
                     </Row>
@@ -82,19 +69,19 @@ class RegisterForm extends Component {
                                 </Col>
                             </Form.Group>
 
-                            <Form.Group as={Row} controlId="confirmPassword">
-                                <Form.Label column sm={3}>
-                                    Confirm password
-                                </Form.Label>
-                                <Col sm={9}>
-                                    <Form.Control
-                                        required
-                                        name="confirmPassword"
-                                        type="password"
-                                        placeholder="Password"
-                                    />
-                                </Col>
-                            </Form.Group>
+                            {/*<Form.Group as={Row} controlId="confirmPassword">*/}
+                                {/*<Form.Label column sm={3}>*/}
+                                    {/*Confirm password*/}
+                                {/*</Form.Label>*/}
+                                {/*<Col sm={9}>*/}
+                                    {/*<Form.Control*/}
+                                        {/*required*/}
+                                        {/*name="confirmPassword"*/}
+                                        {/*type="password"*/}
+                                        {/*placeholder="Password"*/}
+                                    {/*/>*/}
+                                {/*</Col>*/}
+                            {/*</Form.Group>*/}
 
                             <Button variant="primary" type="submit" style={{marginRight: "5px", float: "right"}}>
                                 Submit

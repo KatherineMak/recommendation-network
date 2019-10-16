@@ -1,8 +1,9 @@
 import React from 'react';
 // import './App.css';
-import {Products, UserLogin, UserRegister} from './components/containers';
+import {Products, UserLogin, UserRegister, AppMenu} from './components/containers';
 import { Provider } from 'react-redux';
-import configureStore from './store/configureStore';
+import storeFactory from './store/configureStore'
+// import configureStore from './store/configureStore';
 import {
     BrowserRouter as Router,
     Route,
@@ -10,12 +11,17 @@ import {
 } from 'react-router-dom';
 import Whoops404 from './components/ui/Whoops404';
 
-const store = configureStore();
+const store = storeFactory()
+// const store = configureStore();
+
+window.React = React
+window.store = store
 
 function App() {
   return (
     <Provider store={store}>
         <Router>
+            <Route component={AppMenu} />
             <Switch>
                 {/*<Route exact path="/:id" component={Product} />*/}
                 <Route path='/login' exact component={UserLogin}/>

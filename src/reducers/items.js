@@ -100,6 +100,13 @@ export function userStatus(state = {}, action) {
                 token: action.token
             };
 
+        case 'USER_LOGOUT':
+            return {
+                status: false,
+                message: "logout",
+                token: ""
+            };
+
         default:
             return state;
     }

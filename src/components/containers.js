@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
-import { itemsFetchData, productFetchComments, productActiveKey, addComment, userLoggedIn } from '../actions/items';
+import { itemsFetchData, productFetchComments, productActiveKey, addComment, userLoggedIn, userLogout } from '../actions/items';
 import ProductList from './ui/ProductList';
 import ProductComments from './ui/ProductComments';
 import AddComment from './ui/AddComment';
 import LoginForm from './ui/LoginForm';
 import RegisterForm from './ui/RegisterForm';
+import Menu from './ui/Menu';
 
 //Redux state mapping
 const mapStateToProps = (state) => {
@@ -61,6 +62,7 @@ export const UserLogin = connect(
     dispatch =>
         ({
             addUserStatus: (status, message, token) => dispatch(userLoggedIn(status, message, token)),
+            logout: () => dispatch(userLogout()),
         })
 )(LoginForm);
 
@@ -74,3 +76,21 @@ export const UserRegister = connect(
             addUserStatus: (status, message, token) => dispatch(userLoggedIn(status, message, token)),
         })
 )(RegisterForm);
+
+export const AppMenu = connect(
+    (state) =>
+        ({
+            userStatus: state.userStatus,
+        }),
+    dispatch =>
+        ({
+        })
+)(Menu);
+
+// export const Logout = connect(
+//     null,
+//     dispatch =>
+//         ({
+//             logout: () => dispatch(userLogout()),
+//         })
+// )(LogoutPage);

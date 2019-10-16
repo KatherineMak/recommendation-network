@@ -4,16 +4,13 @@ import {Card, Form, Button, Alert} from "react-bootstrap";
 class AddComment extends Component {
     render() {
         var alert;
-        var button = <Button variant="primary" type="submit">
+        var button = <Button variant="primary" type="submit" style={{marginRight: "5px", float: "right"}}>
             Submit
         </Button>;
         const submit = e => {
-            if (this.props.userStatus.token === undefined) {
+            if (!this.props.userStatus.status) {
                 e.preventDefault();
             } else {
-                console.log('http://smktesting.herokuapp.com/api/reviews/'+this.props.activeKey);
-                console.log('Token '+this.props.userStatus.token);
-                console.log("rate"+e.target.elements.rateProduct.value);
                 fetch('http://smktesting.herokuapp.com/api/reviews/'+this.props.activeKey, {
                     method: 'POST',
                     headers: {
@@ -37,17 +34,14 @@ class AddComment extends Component {
                         }
                     });
             }
-            //e.preventDefault();
-
-            // this.props.addComment(e.target.elements.addComment.value, e.target.elements.rateProduct.value, this.props.activeKey);
         };
-        if (this.props.userStatus.token === undefined) {
+        if (!this.props.userStatus.status) {
             alert =
                 <Alert key={1} variant="danger">
                     <p>Please, login to add your review.</p>
                 </Alert>;
 
-            button = <Button variant="primary" type="submit" disabled>
+            button = <Button variant="primary" type="submit" style={{marginRight: "5px", float: "right"}} disabled>
                 Submit
             </Button>;
         }
@@ -64,11 +58,11 @@ class AddComment extends Component {
                         <Form.Group controlId="rateProduct">
                             <Form.Label>Rate product</Form.Label>
                             <Form.Control as="select">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
                                 <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
                             </Form.Control>
                         </Form.Group>
                         {button}

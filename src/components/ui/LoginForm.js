@@ -1,8 +1,10 @@
 import React, { Component }  from 'react';
 import {Form, Button, Row, Col, Container, Alert} from "react-bootstrap";
-import { Redirect } from 'react-router'
 
 class LoginForm extends Component {
+    componentWillMount() {
+        this.props.logout();
+    }
     render() {
         const submit = e => {
             e.preventDefault();
@@ -32,20 +34,19 @@ class LoginForm extends Component {
         // }
         //
         let alert;
-        if (this.props.userStatus.status === false) {
+        if ((this.props.userStatus.status === false) && (this.props.userStatus.message !== "logout")) {
             alert =
             <Alert key={1} variant="danger">
                 {this.props.userStatus.message}
             </Alert>;
         }
-        //
-        // if (this.props.userStatus.status === true) {
-        //     return <Redirect to='/'/>;
-        // }
 
         return (
             <div>
                 <Container>
+                    <Row style={{margin: "10px 30px"}} className="justify-content-md-center">
+                        <p>Login form</p>
+                    </Row>
                     <Row style={{margin: "10px 30px"}} className="justify-content-md-center">
                         {alert}
                     </Row>
@@ -84,6 +85,9 @@ class LoginForm extends Component {
                                 Submit
                             </Button>
                         </Form>
+                    </Row>
+                    <Row className="justify-content-md-center">
+                        <p>If you are not registered, <a href="/register"> register</a>.</p>
                     </Row>
                 </Container>
             </div>

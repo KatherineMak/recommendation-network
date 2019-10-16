@@ -70,6 +70,12 @@ export function userLoggedIn(status, message, token) {
     };
 }
 
+export function userLogout() {
+    return {
+        type: 'USER_LOGOUT'
+    };
+}
+
 //creator actions
 export function itemsFetchData(url) {
     return (dispatch) => {
