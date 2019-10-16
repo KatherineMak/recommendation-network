@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/katherinemak/recommendation-network.git/static/css/main.34de6062.chunk.css",
-    "main.js": "/katherinemak/recommendation-network.git/static/js/main.303b61ed.chunk.js",
-    "main.js.map": "/katherinemak/recommendation-network.git/static/js/main.303b61ed.chunk.js.map",
-    "runtime~main.js": "/katherinemak/recommendation-network.git/static/js/runtime~main.beaef62c.js",
-    "runtime~main.js.map": "/katherinemak/recommendation-network.git/static/js/runtime~main.beaef62c.js.map",
-    "static/css/2.266e55a5.chunk.css": "/katherinemak/recommendation-network.git/static/css/2.266e55a5.chunk.css",
-    "static/js/2.ba4ea9fa.chunk.js": "/katherinemak/recommendation-network.git/static/js/2.ba4ea9fa.chunk.js",
-    "static/js/2.ba4ea9fa.chunk.js.map": "/katherinemak/recommendation-network.git/static/js/2.ba4ea9fa.chunk.js.map",
-    "index.html": "/katherinemak/recommendation-network.git/index.html",
-    "precache-manifest.6d91c95a1203fb8f02f677f21da94121.js": "/katherinemak/recommendation-network.git/precache-manifest.6d91c95a1203fb8f02f677f21da94121.js",
-    "service-worker.js": "/katherinemak/recommendation-network.git/service-worker.js",
-    "static/css/2.266e55a5.chunk.css.map": "/katherinemak/recommendation-network.git/static/css/2.266e55a5.chunk.css.map",
-    "static/css/main.34de6062.chunk.css.map": "/katherinemak/recommendation-network.git/static/css/main.34de6062.chunk.css.map"
+    "main.css": "/katherinemak/recommendation-network/static/css/main.34de6062.chunk.css",
+    "main.js": "/katherinemak/recommendation-network/static/js/main.089d3584.chunk.js",
+    "main.js.map": "/katherinemak/recommendation-network/static/js/main.089d3584.chunk.js.map",
+    "runtime~main.js": "/katherinemak/recommendation-network/static/js/runtime~main.6a7cb5ee.js",
+    "runtime~main.js.map": "/katherinemak/recommendation-network/static/js/runtime~main.6a7cb5ee.js.map",
+    "static/css/2.266e55a5.chunk.css": "/katherinemak/recommendation-network/static/css/2.266e55a5.chunk.css",
+    "static/js/2.ba4ea9fa.chunk.js": "/katherinemak/recommendation-network/static/js/2.ba4ea9fa.chunk.js",
+    "static/js/2.ba4ea9fa.chunk.js.map": "/katherinemak/recommendation-network/static/js/2.ba4ea9fa.chunk.js.map",
+    "index.html": "/katherinemak/recommendation-network/index.html",
+    "precache-manifest.650ea4887633c3281a5badf3ecc338d1.js": "/katherinemak/recommendation-network/precache-manifest.650ea4887633c3281a5badf3ecc338d1.js",
+    "service-worker.js": "/katherinemak/recommendation-network/service-worker.js",
+    "static/css/2.266e55a5.chunk.css.map": "/katherinemak/recommendation-network/static/css/2.266e55a5.chunk.css.map",
+    "static/css/main.34de6062.chunk.css.map": "/katherinemak/recommendation-network/static/css/main.34de6062.chunk.css.map"
   }
 }
