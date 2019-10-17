@@ -1,5 +1,13 @@
 import React, { Component }  from 'react';
-import {Form, Button, Row, Col, Container, Alert} from "react-bootstrap";
+import PropTypes from 'prop-types';
+import {
+    Form,
+    Button,
+    Row,
+    Col,
+    Container,
+    Alert
+} from "react-bootstrap";
 
 class RegisterForm extends Component {
     render() {
@@ -33,13 +41,13 @@ class RegisterForm extends Component {
             <div>
                 <Container>
                     <Row style={{margin: "10px 30px"}} className="justify-content-md-center">
-                        <p>Registration form</p>
+                        <h3>Registration form</h3>
                     </Row>
                     <Row style={{margin: "10px 30px"}} className="justify-content-md-center">
                         {alert}
                     </Row>
                     <Row style={{margin: "30px"}} className="justify-content-md-center">
-                        <Form onSubmit={submit} style={{padding: "20px", border: "4px ridge #D0D0D0"}}>
+                        <Form className="login-form" onSubmit={submit}>
 
                             <Form.Group as={Row} controlId="username">
                                 <Form.Label column sm={3}>
@@ -79,4 +87,11 @@ class RegisterForm extends Component {
         );
     }
 }
+
+RegisterForm.propTypes = {
+    userStatus: PropTypes.object.isRequired,
+    addUserStatus: PropTypes.func
+};
+
+
 export default RegisterForm

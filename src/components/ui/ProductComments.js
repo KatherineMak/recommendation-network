@@ -1,4 +1,5 @@
 import React, { Component }  from 'react';
+import PropTypes from 'prop-types';
 import {Card} from "react-bootstrap";
 
 class ProductComments extends Component {
@@ -40,4 +41,11 @@ class ProductComments extends Component {
         );
     }
 }
+
+ProductComments.propTypes = {
+    comments: PropTypes.array.isRequired,
+    commentsHasErrored: PropTypes.bool.isRequired,
+    commentsIsLoading: PropTypes.bool.isRequired
+};
+
 export default ProductComments

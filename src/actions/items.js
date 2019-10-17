@@ -1,12 +1,12 @@
 import { v4 } from 'uuid'
-//actions
+
 export function itemsHasErrored(bool) {
     return {
         type: 'ITEMS_HAS_ERRORED',
         hasErrored: bool
     };
 }
-//actions
+
 export function itemsIsLoading(bool) {
     return {
         type: 'ITEMS_IS_LOADING',
@@ -19,26 +19,28 @@ export function commentsHasErrored(bool) {
         hasErrored: bool
     };
 }
-//actions
+
 export function commentsIsLoading(bool) {
     return {
         type: 'COMMENTS_IS_LOADING',
         isLoading: bool
     };
 }
-//actions
+
 export function itemsFetchDataSuccess(items) {
     return {
         type: 'ITEMS_FETCH_DATA_SUCCESS',
         items
     };
 }
+
 export function productActiveKey(activeKey) {
     return {
         type: 'PRODUCT_ACTIVE_KEY',
         activeKey
     };
 }
+
 export function productCommentsFetchSuccess(comments) {
     return {
         type: 'PRODUCT_COMMENTS_FETCH_SUCCESS',
@@ -70,12 +72,16 @@ export function userLoggedIn(status, message, token) {
     };
 }
 
-export function userLogout(status, message, token) {
+export function userLogout() {
     return {
-        type: 'USER_LOG',
-        status,
-        message,
-        token
+        type: 'USER_LOGOUT'
+    };
+}
+
+export function menuActiveTab(activeTab) {
+    return {
+        type: 'MENU_ACTIVE_TAB',
+        activeTab
     };
 }
 

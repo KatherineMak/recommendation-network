@@ -29,7 +29,7 @@ class AddComment extends Component {
         };
         if (!this.props.userStatus.status) {
             alert =
-                <Alert key={1} variant="danger">
+                <Alert className="comment-alert" key={1} variant="danger">
                     <p>Please, login to add your review.</p>
                 </Alert>;
 

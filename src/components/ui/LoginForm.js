@@ -1,8 +1,16 @@
 import React, { Component }  from 'react';
-import {Form, Button, Row, Col, Container, Alert} from "react-bootstrap";
+import PropTypes from 'prop-types';
+import {
+    Form,
+    Button,
+    Row,
+    Col,
+    Container,
+    Alert
+} from "react-bootstrap";
 
 class LoginForm extends Component {
-    componentWillMount() {
+    componentDidMount() {
         this.props.logout();
     }
     render() {
@@ -17,22 +25,13 @@ class LoginForm extends Component {
             .then((jsonData) => {
                 if (jsonData.success) {
                     this.props.addUserStatus(jsonData.success, "ok", jsonData.token);
-                    console.log(this.props.userStatus.message);
                     this.props.history.push(`/`);
-                    // return <p>this.props.userStatus.message</p>;
                 } else {
                     this.props.addUserStatus(jsonData.success, jsonData.message, "");
-                    console.log(this.props.userStatus.message);
-                    // return <div>this.props.userStatus.message</div>;
                 }
             });
-            // this.props.addComment(e.target.elements.addComment.value, e.target.elements.rateProduct.value, this.props.activeKey)
         };
 
-        // if (this.props.userStatus.status) {
-        //     return <p>this.props.userStatus.message</p>;
-        // }
-        //
         let alert;
         if ((this.props.userStatus.status === false) && (this.props.userStatus.message !== "logout")) {
             alert =
@@ -45,13 +44,13 @@ class LoginForm extends Component {
             <div>
                 <Container>
                     <Row style={{margin: "10px 30px"}} className="justify-content-md-center">
-                        <p>Login form</p>
+                        <h3>Login form</h3>
                     </Row>
                     <Row style={{margin: "10px 30px"}} className="justify-content-md-center">
                         {alert}
                     </Row>
                     <Row style={{margin: "30px"}} className="justify-content-md-center">
-                        <Form onSubmit={submit} style={{padding: "20px", border: "4px ridge #D0D0D0"}}>
+                        <Form className="login-form" onSubmit={submit}>
 
                             <Form.Group as={Row} controlId="username">
                                 <Form.Label column sm={3}>
@@ -94,4 +93,10 @@ class LoginForm extends Component {
         );
     }
 }
+
+LoginForm.propTypes = {
+    userStatus: PropTypes.object.isRequired,
+    addUserStatus: PropTypes.func
+};
+
 export default LoginForm

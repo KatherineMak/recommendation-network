@@ -111,3 +111,13 @@ export function userStatus(state = {}, action) {
             return state;
     }
 }
+
+export function activeTab(state = null, action) {
+    switch (action.type) {
+        case 'MENU_ACTIVE_TAB':
+            return action.activeTab;
+
+        default:
+            return state;
+    }
+}

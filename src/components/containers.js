@@ -1,5 +1,13 @@
 import { connect } from 'react-redux';
-import { itemsFetchData, productFetchComments, productActiveKey, addComment, userLoggedIn, userLogout } from '../actions/items';
+import {
+    itemsFetchData,
+    productFetchComments,
+    productActiveKey,
+    addComment,
+    userLoggedIn,
+    userLogout,
+    menuActiveTab
+} from '../actions/items';
 import ProductList from './ui/ProductList';
 import ProductComments from './ui/ProductComments';
 import AddComment from './ui/AddComment';
@@ -7,28 +15,25 @@ import LoginForm from './ui/LoginForm';
 import RegisterForm from './ui/RegisterForm';
 import Menu from './ui/Menu';
 
-//Redux state mapping
-const mapStateToProps = (state) => {
-    return {
-        items: state.items,
-        hasErrored: state.itemsHasErrored,
-        isLoading: state.itemsIsLoading,
-        commentsHasErrored: state.commentsHasErrored,
-        commentsIsLoading: state.commentsIsLoading,
-        activeKey: state.activeKey,
-        comments: state.comments
-    };
-};
-//mapping the dispatch of our actions creator to component properties
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchData: (url) => dispatch(itemsFetchData(url)),
-        fetchComments: (url) => dispatch(productFetchComments(url)),
-        setActiveKey: (activeKey) => dispatch(productActiveKey(activeKey))
-    };
-};
-export const Products = connect(mapStateToProps, mapDispatchToProps)(ProductList);
-// export const Comments = connect(mapStateToProps, mapDispatchToProps)(ProductComments);
+export const Products = connect(
+    (state, {match}) =>
+        ({
+            items: state.items,
+            hasErrored: state.itemsHasErrored,
+            isLoading: state.itemsIsLoading,
+            commentsHasErrored: state.commentsHasErrored,
+            commentsIsLoading: state.commentsIsLoading,
+            activeKey: state.activeKey,
+            comments: state.comments
+        }),
+    dispatch =>
+        ({
+            fetchData: (url) => dispatch(itemsFetchData(url)),
+            fetchComments: (url) => dispatch(productFetchComments(url)),
+            setActiveKey: (activeKey) => dispatch(productActiveKey(activeKey))
+        })
+)(ProductList);
+
 export const Comments = connect(
     (state, {match}) =>
         ({
@@ -36,10 +41,7 @@ export const Comments = connect(
             commentsIsLoading: state.commentsIsLoading,
             comments: state.comments
         }),
-    dispatch =>
-        ({
-            //fetchComments: (url) => dispatch(productFetchComments(url)),
-        })
+    null
 )(ProductComments);
 
 export const AddCommentForm = connect(
@@ -81,16 +83,10 @@ export const AppMenu = connect(
     (state) =>
         ({
             userStatus: state.userStatus,
+            activeTab: state.activeTab,
         }),
     dispatch =>
         ({
+            changeActiveTab: (activeTab) => dispatch(menuActiveTab(activeTab)),
         })
 )(Menu);
-
-// export const Logout = connect(
-//     null,
-//     dispatch =>
-//         ({
-//             logout: () => dispatch(userLogout()),
-//         })
-// )(LogoutPage);

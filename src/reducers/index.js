@@ -1,5 +1,16 @@
 import { combineReducers } from 'redux';
-import { items, itemsHasErrored, itemsIsLoading, activeKey, commentsHasErrored, commentsIsLoading, comments, comment, userStatus} from './items';
+import {
+    items,
+    itemsHasErrored,
+    itemsIsLoading,
+    activeKey,
+    commentsHasErrored,
+    commentsIsLoading,
+    comments,
+    comment,
+    userStatus,
+    activeTab
+} from './items';
 
 export default combineReducers({
     items,
@@ -10,5 +21,6 @@ export default combineReducers({
     comment,
     comments,
     activeKey,
-    userStatus
+    userStatus,
+    activeTab
 });
