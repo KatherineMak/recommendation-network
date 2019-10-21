@@ -21,14 +21,15 @@ class ProductList extends Component {
         return (
             <div>
                 <Container>
-                    <Row style={{margin: "30px auto" }}>
+                    <Row style={{ margin: '30px auto' }}>
                         <Col md={3}>
                             <Nav variant="pills" activeKey={this.props.activeKey}
                                  onSelect={(selectedKey) => {
                                     this.props.setActiveKey(selectedKey);
                                     this.props.fetchComments('http://smktesting.herokuapp.com/api/reviews/'+selectedKey+'?format=json');
-                                 }
-                                } className="flex-column">
+                                 }}
+                                 className="flex-column"
+                            >
                                 {this.props.items.map((item) => (
                                     <Nav.Item key={item.id}>
                                         <Nav.Link eventKey={item.id}>
@@ -43,10 +44,11 @@ class ProductList extends Component {
                             <Col md={4} sm={4}  key={product.id}>
                                 <Card style={{
                                     width: 'auto',
-                                    backgroundColor: "#AFEEEE"
+                                    backgroundColor: '#AFEEEE'
 
                                 }}>
-                                    <Card.Img style={{margin: "10px 0 10px 0" }} variant="top" src={'http://smktesting.herokuapp.com/static/' + product.img} alt={product.title}/>
+                                    <Card.Img style={{margin: '10px 0 10px 0' }} variant="top" src={'http://smktesting.herokuapp.com/static/' + product.img}
+                                              alt={product.title}/>
                                     <Card.Body>
                                         <Card.Title>{product.title}</Card.Title>
                                         <Card.Text>

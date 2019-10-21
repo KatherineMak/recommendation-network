@@ -40,13 +40,13 @@ class RegisterForm extends Component {
         return (
             <div>
                 <Container>
-                    <Row style={{margin: "10px 30px"}} className="justify-content-md-center">
+                    <Row style={{ margin: '10px 30px' }} className="justify-content-md-center">
                         <h3>Registration form</h3>
                     </Row>
-                    <Row style={{margin: "10px 30px"}} className="justify-content-md-center">
+                    <Row style={{ margin: '10px 30px' }} className="justify-content-md-center">
                         {alert}
                     </Row>
-                    <Row style={{margin: "30px"}} className="justify-content-md-center">
+                    <Row style={{ margin: '30px' }} className="justify-content-md-center">
                         <Form className="login-form" onSubmit={submit}>
 
                             <Form.Group as={Row} controlId="username">
@@ -77,7 +77,7 @@ class RegisterForm extends Component {
                                 </Col>
                             </Form.Group>
 
-                            <Button variant="primary" type="submit" style={{marginRight: "5px", float: "right"}}>
+                            <Button variant="primary" type="submit" style={{ marginRight: '5px', float: 'right' }}>
                                 Submit
                             </Button>
                         </Form>

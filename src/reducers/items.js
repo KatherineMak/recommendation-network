@@ -1,3 +1,5 @@
+//products properties
+
 export function itemsHasErrored(state = false, action) {
     switch (action.type) {
         case 'ITEMS_HAS_ERRORED':
@@ -17,6 +19,18 @@ export function itemsIsLoading(state = false, action) {
             return state;
     }
 }
+
+export function items(state = [], action) {
+    switch (action.type) {
+        case 'ITEMS_FETCH_DATA_SUCCESS':
+            return action.items;
+
+        default:
+            return state;
+    }
+}
+
+// comments properties
 
 export function commentsIsLoading(state = false, action) {
     switch (action.type) {
@@ -38,22 +52,10 @@ export function commentsHasErrored(state = false, action) {
     }
 }
 
-
-export function items(state = [], action) {
-    switch (action.type) {
-        case 'ITEMS_FETCH_DATA_SUCCESS':
-            return action.items;
-
-        default:
-            return state;
-    }
-}
-
 export function comments(state = [], action) {
     switch (action.type) {
         case 'PRODUCT_COMMENTS_FETCH_SUCCESS':
             return action.comments;
-            // return [...state, action.comments];
         case 'ADD_COMMENT' :
             return [
                 ...state,
@@ -80,6 +82,7 @@ export function comment(state = {}, action) {
     }
 }
 
+// selected product property
 
 export function activeKey(state = null, action) {
     switch (action.type) {
@@ -90,6 +93,8 @@ export function activeKey(state = null, action) {
             return state;
     }
 }
+
+// user properties
 
 export function userStatus(state = {}, action) {
     switch (action.type) {
@@ -111,6 +116,8 @@ export function userStatus(state = {}, action) {
             return state;
     }
 }
+
+// selected menu tab property
 
 export function activeTab(state = null, action) {
     switch (action.type) {

@@ -1,5 +1,7 @@
 import { v4 } from 'uuid'
 
+// products loading actions
+
 export function itemsHasErrored(bool) {
     return {
         type: 'ITEMS_HAS_ERRORED',
@@ -13,6 +15,16 @@ export function itemsIsLoading(bool) {
         isLoading: bool
     };
 }
+
+export function itemsFetchDataSuccess(items) {
+    return {
+        type: 'ITEMS_FETCH_DATA_SUCCESS',
+        items
+    };
+}
+
+// comments loading actions
+
 export function commentsHasErrored(bool) {
     return {
         type: 'COMMENTS_HAS_ERRORED',
@@ -24,20 +36,6 @@ export function commentsIsLoading(bool) {
     return {
         type: 'COMMENTS_IS_LOADING',
         isLoading: bool
-    };
-}
-
-export function itemsFetchDataSuccess(items) {
-    return {
-        type: 'ITEMS_FETCH_DATA_SUCCESS',
-        items
-    };
-}
-
-export function productActiveKey(activeKey) {
-    return {
-        type: 'PRODUCT_ACTIVE_KEY',
-        activeKey
     };
 }
 
@@ -63,6 +61,26 @@ export function addComment(text, rate, product_id) {
     };
 }
 
+// id of the selected product
+
+export function productActiveKey(activeKey) {
+    return {
+        type: 'PRODUCT_ACTIVE_KEY',
+        activeKey
+    };
+}
+
+//id of the selected menu tab
+
+export function menuActiveTab(activeTab) {
+    return {
+        type: 'MENU_ACTIVE_TAB',
+        activeTab
+    };
+}
+
+// user authorization actions
+
 export function userLoggedIn(status, message, token) {
     return {
         type: 'USER_LOGGED_IN',
@@ -75,13 +93,6 @@ export function userLoggedIn(status, message, token) {
 export function userLogout() {
     return {
         type: 'USER_LOGOUT'
-    };
-}
-
-export function menuActiveTab(activeTab) {
-    return {
-        type: 'MENU_ACTIVE_TAB',
-        activeTab
     };
 }
 
@@ -113,7 +124,7 @@ export function itemsFetchData(url) {
 export function productFetchComments(url) {
     return (dispatch) => {
         dispatch(commentsIsLoading(true));
-        fetch(url)
+        return fetch(url)
             .then((response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);

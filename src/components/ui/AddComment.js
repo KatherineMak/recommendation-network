@@ -5,9 +5,9 @@ import {Card, Form, Button, Alert} from "react-bootstrap";
 class AddComment extends Component {
     render() {
         var alert;
-        var button = <Button variant="primary" type="submit" style={{marginRight: "5px", float: "right"}}>
-            Submit
-        </Button>;
+        var button = <Button variant="primary" type="submit" style={{ marginRight: '5px', float: 'right' }}>
+                        Submit
+                     </Button>
         const submit = e => {
             fetch('http://smktesting.herokuapp.com/api/reviews/'+this.props.activeKey, {
                 method: 'POST',
@@ -28,19 +28,18 @@ class AddComment extends Component {
             });
         };
         if (!this.props.userStatus.status) {
-            alert =
-                <Alert className="comment-alert" key={1} variant="danger">
-                    <p>Please, login to add your review.</p>
-                </Alert>;
+            alert = <Alert className="comment-alert" key={1} variant="danger">
+                        <p>Please, login to add your review.</p>
+                    </Alert>
 
-            button = <Button variant="primary" type="submit" style={{marginRight: "5px", float: "right"}} disabled>
-                Submit
-            </Button>;
+            button = <Button variant="primary" type="submit" style={{ marginRight: '5px', float: 'right' }} disabled>
+                        Submit
+                    </Button>
         }
         return (
             <div>
                 {alert}
-                <Card md={5} sm={5} style={{ marginBottom: '20px', padding: "10px"}}>
+                <Card md={5} sm={5} style={{ marginBottom: '20px', padding: '10px' }}>
 
                     <Form onSubmit={submit}>
                         <Form.Group controlId="addComment">

@@ -18,10 +18,9 @@ window.store = store;
 function App() {
   return (
     <Provider store={store}>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <Route component={AppMenu} />
             <Switch>
-
                 <Route path='/' exact component={Products}/>
                 <Route path='/login' exact component={UserLogin}/>
                 <Route path='/register' exact component={UserRegister}/>

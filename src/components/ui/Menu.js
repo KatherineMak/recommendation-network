@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Nav} from "react-bootstrap";
+import { Nav, Container } from "react-bootstrap";
 
 class Menu extends Component {
     render() {
@@ -10,16 +10,18 @@ class Menu extends Component {
         }
         return (
             <div>
-                <Nav className="app-menu justify-content-end" variant="pills" activeKey={this.props.activeTab}
-                     defaultActiveKey="/"
-                     onSelect={selectedKey => this.props.changeActiveTab(selectedKey)}>
-                    <Nav.Item>
-                        <Nav.Link href="/">Products</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                        <Nav.Link href="/login" eventKey="/login" >{login}</Nav.Link>
-                    </Nav.Item>
-                </Nav>
+                <Container>
+                    <Nav className="app-menu justify-content-end" variant="pills" activeKey={this.props.activeTab}
+                         defaultActiveKey="/"
+                         onSelect={selectedKey => this.props.changeActiveTab(selectedKey)}>
+                        <Nav.Item>
+                            <Nav.Link href="/">Products</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link href="/login" eventKey="/login" >{login}</Nav.Link>
+                        </Nav.Item>
+                    </Nav>
+                </Container>
             </div>
         );
     }
